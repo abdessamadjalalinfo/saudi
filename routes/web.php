@@ -40,6 +40,6 @@ Route::post('/storeimages', [App\Http\Controllers\DashboardController::class, 's
 Route::post('/storemedia', [App\Http\Controllers\DashboardController::class, 'storemedia'])->name('storemedia');
 
 
-Route::post('/addcategory', [App\Http\Controllers\DashboardController::class, 'addcategory'])->name('addcategory');
+Route::get('/addcategory', [App\Http\Controllers\DashboardController::class, 'addcategory'])->name('addcategory');
 
 

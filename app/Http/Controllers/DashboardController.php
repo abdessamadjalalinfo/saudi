@@ -150,6 +150,7 @@ class DashboardController extends Controller
     {
         $cat=new Categorie();
         $cat->name=$request->name;
+        $cat->desc=$request->name;
         $cat->save();
         return redirect()->back();
     }
