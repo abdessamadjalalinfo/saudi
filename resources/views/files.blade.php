@@ -60,9 +60,11 @@
 
 </div>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="{{route('profile')}}"  style="padding: 10px 0px;">Profile</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="Upload-Contant.html" style="padding: 10px 0px;">Upload Contant</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="Admin-Panel.html" style="padding: 10px 0px;">Admin Panel</a>
-</li></ul>
+</li>@if(Auth::user()->role_id==1)
+<li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="{{route('uploadcontent')}}"  style="padding: 10px 0px;">Upload Contant</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2"href="{{route('admin')}}" style="padding: 10px 0px;">Admin Panel</a>
+</li>
+@endif</ul>
         </div>
         <div class="u-custom-menu u-nav-container-collapse">
           <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">

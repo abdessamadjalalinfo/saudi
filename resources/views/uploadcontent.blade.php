@@ -61,9 +61,13 @@
 
 </div>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="{{route('profile')}}" style="padding: 10px 0px;">Profile</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="{{route('uploadcontent')}}" style="padding: 10px 0px;">Upload Contant</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="{{route('admin')}}" style="padding: 10px 0px;">Admin Panel</a>
-</li></ul>
+</li>
+@if(Auth::user()->role_id==1)
+<li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="{{route('uploadcontent')}}"  style="padding: 10px 0px;">Upload Contant</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2"href="{{route('admin')}}" style="padding: 10px 0px;">Admin Panel</a>
+</li>
+@endif
+</ul>
         </div>
         <div class="u-custom-menu u-nav-container-collapse">
           <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
@@ -118,16 +122,16 @@
         @csrf
         <div class="form-group">
           <label for="exampleInputEmail1">Name</label>
-          <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+          <input required type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
           
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Description</label>
-          <input type="text" name="desc" class="form-control" id="exampleInputPassword1" placeholder="description">
+          <input required type="text" name="desc" class="form-control" id="exampleInputPassword1" placeholder="description">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">upload</label>
-            <input type="file" name="video" class="form-control" >
+            <input required type="file" name="video" class="form-control" >
           </div>
         
         <button type="submit" class="btn btn-primary">Upload</button>
@@ -150,12 +154,12 @@
         @csrf
         <div class="form-group">
           <label for="exampleInputEmail1">Image's name</label>
-          <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+          <input required type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
           
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Description</label>
-          <input type="text" name="desc" class="form-control" id="exampleInputPassword1" placeholder="Description">
+          <input required type="text" name="desc" class="form-control" id="exampleInputPassword1" placeholder="Description">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">upload</label>
@@ -181,12 +185,12 @@
         @csrf
         <div class="form-group">
           <label for="exampleInputEmail1">Media's name</label>
-          <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
+          <input required type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name">
           
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Description</label>
-          <input type="text" name="desc" class="form-control" id="exampleInputPassword1" placeholder="description">
+          <input required type="text" name="desc" class="form-control" id="exampleInputPassword1" placeholder="description">
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Categorie</label>
@@ -199,7 +203,7 @@
           </div>
         <div class="form-group">
             <label for="exampleInputPassword1">upload</label>
-            <input type="file" name="media" class="form-control" id="exampleInputPassword1" >
+            <input required type="file" name="media" class="form-control" id="exampleInputPassword1" >
           </div>
         
         <button type="submit" class="btn btn-primary">Upload</button>

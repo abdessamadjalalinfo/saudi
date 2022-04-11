@@ -8,6 +8,7 @@ use App\Models\Media;
 use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class DashboardController extends Controller
 {
@@ -152,6 +153,14 @@ class DashboardController extends Controller
         $cat->name=$request->name;
         $cat->desc=$request->name;
         $cat->save();
+        return redirect()->back();
+    }
+
+    public function changepassword(Request $request)
+    {
+        $user=Auth::user();
+        $user->password= Hash::make($request->pass);
+        $user->save();
         return redirect()->back();
     }
 }

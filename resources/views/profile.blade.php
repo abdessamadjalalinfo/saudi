@@ -7,6 +7,9 @@
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>User profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="User-profile.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
@@ -60,9 +63,11 @@
   
   </div>
   </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="{{route('profile')}}" style="padding: 10px 0px;">Profile</a>
-  </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2"  href="{{route('uploadcontent')}}"  style="padding: 10px 0px;">Upload Contant</a>
-  </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="Admin-Panel.html" style="padding: 10px 0px;">Admin Panel</a>
-  </li></ul>
+  </li>@if(Auth::user()->role_id==1)
+<li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="{{route('uploadcontent')}}"  style="padding: 10px 0px;">Upload Contant</a>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2"href="{{route('admin')}}" style="padding: 10px 0px;">Admin Panel</a>
+</li>
+@endif</ul>
           </div>
         <div class="u-custom-menu u-nav-container-collapse">
           <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
@@ -80,7 +85,7 @@
 </div>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="User-profile.html" style="padding: 10px 0px;">Profile</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{route('uploadcontent')}}" style="padding: 10px 0px;">Upload Contant</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Admin-Panel.html" style="padding: 10px 0px;">Admin Panel</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{route('admin')}}" style="padding: 10px 0px;">Admin Panel</a>
 </li></ul>
             </div>
           </div>
@@ -135,12 +140,14 @@
 	c0,0.713-0.485,1.36-1.181,1.575l-0.497,0.153l-0.16,0.495c-0.59,1.833-1.43,3.526-2.496,5.032c-0.262,0.37-0.517,0.698-0.736,0.949
 	l-0.248,0.283V39.8c0,1.612,0.896,3.062,2.338,3.782l8.467,4.233c0.054,0.027,0.107,0.055,0.16,0.083
 	C42.677,47.979,42.567,48.054,42.459,48.132z"></path></svg></span>
-                  <p class="u-align-center u-large-text u-text u-text-variant u-text-1">Saleh Almadni&nbsp;</p>
-                  <p class="u-align-center u-large-text u-text u-text-variant u-text-2">Admin&nbsp;</p>
+                  <p class="u-align-center u-large-text u-text u-text-variant u-text-1">{{$user->name}}</p>
+                  <p class="u-align-center u-large-text u-text u-text-variant u-text-2">{{$user->role->name}}</p>
                   <p class="u-text u-text-default u-text-3">
-                    <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-dialog-link u-hover-none u-none u-text-white u-btn-1" href="#ChPass"><span class="u-dialog-link u-file-icon u-icon u-text-white u-icon-2" data-href="#ChPass"><img src="images/3.png" alt=""></span>&nbsp;Change Password
-                    </a>
+                    
+                 
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Change password</button>
                   </p>
+
                 </div>
               </div>
               <div class="u-container-style u-layout-cell u-size-42 u-layout-cell-2">
@@ -164,7 +171,30 @@
         </div>
       </div>
     </section>
-    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Change your password</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="{{route('changepassword')}}">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">New password:</label>
+                  <input type="password" name="pass" class="form-control" id="recipient-name">
+                </div>
+                <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+                
+              </form>
+            </div>
+      
+    </div>
+    </div>
+    </div>
     
     
     
@@ -186,32 +216,36 @@
         <p class="u-align-center u-custom-font u-font-roboto-slab u-text u-text-palette-5-dark-1 u-text-2">Contact us via</p>
       </div></footer>
   <section class="u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-40 u-valign-middle u-section-4" id="ChPass">
-      <div class="u-align-center u-container-style u-dialog u-white u-dialog-1">
-        <div class="u-container-layout u-valign-middle u-container-layout-1">
-          <div class="u-form u-form-1">
-            <form action="#" method="POST" class="u-clearfix u-form-spacing-4 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 0px;">
-              <div class="u-form-group">
-                <label for="name-4e1b" class="u-label">Current password</label>
-                <input type="text" placeholder="Enter your Name" id="name-4e1b" name="CurPass" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-28 u-white" required="required">
-              </div>
-              <div class="u-form-group">
-                <label for="email-4e1b" class="u-label">New Password</label>
-                <input type="text" placeholder="Enter you new Password" id="email-4e1b" name="Npass" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-28 u-white" required="required">
-              </div>
-              <div class="u-form-group">
-                <label for="text-5448" class="u-label">Confirm NewPassword</label>
-                <input type="text" placeholder="Enter new Password Again" id="text-5448" name="ConNpass" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-28 u-white" required="required">
-              </div>
-              <div class="u-align-right u-form-group u-form-submit">
-                <a href="#" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-2 u-radius-50 u-btn-1">Submit</a>
-                <input type="submit" value="submit" class="u-form-control-hidden">
-              </div>
-              <div class="u-form-send-message u-form-send-success">Your Password has been updated successfully!</div>
-              <div class="u-form-send-error u-form-send-message">Unable to update your Password. Please fix errors then try again.</div>
-              <input type="hidden" value="" name="recaptchaResponse">
-            </form>
-          </div>
-        </div><button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
+    <div class="u-align-center u-container-style u-dialog u-white u-dialog-1">
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Change your password</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="{{route('changepassword')}}">
+                <div class="mb-3">
+                  <label for="recipient-name" class="col-form-label">New password:</label>
+                  <input type="password" name="pass" class="form-control" id="recipient-name">
+                </div>
+                <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+                
+              </form>
+            </div>
+      
+    </div>
+  </div>
+</div>
+
+
+        
+        
+        <button class="u-dialog-close-button u-icon u-text-grey-40 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 16 16" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-efe9"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 16 16" x="0px" y="0px" id="svg-efe9"><rect x="7" y="0" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="2" height="16"></rect><rect x="0" y="7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -3.3138 8.0002)" width="16" height="2"></rect></svg></button>
       </div>
     </section><style> .u-section-4 {
   min-height: 858px;

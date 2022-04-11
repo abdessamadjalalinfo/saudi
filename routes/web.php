@@ -42,4 +42,5 @@ Route::post('/storemedia', [App\Http\Controllers\DashboardController::class, 'st
 
 Route::get('/addcategory', [App\Http\Controllers\DashboardController::class, 'addcategory'])->name('addcategory');
 
+Route::get('/changepassword', [App\Http\Controllers\DashboardController::class, 'changepassword'])->name('changepassword');
 
