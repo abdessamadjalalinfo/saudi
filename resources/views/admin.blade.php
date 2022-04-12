@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>Admin Panel</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -104,112 +106,185 @@
   
    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
        @csrf
-   </form> </span> <section class="u-align-center u-clearfix u-section-1" id="sec-f181">
+   </form> </span> 
+   <div class="row">
+     <div style="background-color: rgb(255, 255, 255);" class="col-3">
+      <div class="">
+        <h2 class="u-align-center u-subtitle u-text u-text-4">Information</h2>
+        <div class="u-align-center u-border-2 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
+        <p class="u-align-center u-large-text u-text u-text-variant u-text-5">Name:{{$user->name}}</p>
+        <p class="u-align-center u-large-text u-text u-text-variant u-text-5">Email:{{$user->email}}</p>
+        <p class="u-align-center u-large-text u-text u-text-variant u-text-6">Phone:{{$user->phone}}</p>
+        <p class="u-align-center u-large-text u-text u-text-variant u-text-7">ID:{{$user->id}}</p>
+ 
+        <p class="u-align-center u-small-text u-text u-text-palette-5-dark-2 u-text-variant u-text-10">Password :******</p>
         
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-expanded-width u-tab-links-align-right u-tabs u-tabs-1">
-          <ul class="u-spacing-5 u-tab-list u-unstyled" role="tablist">
-            <li class="u-tab-item" role="presentation">
-              <a class="active u-border-3 u-border-active-custom-color-2 u-border-grey-25 u-border-hover-custom-color-3 u-border-no-bottom u-border-no-left u-border-no-right u-button-style u-radius-9 u-tab-link u-tab-link-1" id="link-tab-0da5" href="#tab-0da5" role="tab" aria-controls="tab-0da5" aria-selected="true">Categories</a>
-            </li>
-            
-          </ul>
-          <div class="u-tab-content">
-            <div class="u-container-style u-tab-active u-tab-pane u-white u-tab-pane-1" id="tab-0da5" role="tabpanel" aria-labelledby="link-tab-0da5">
-              <div class="u-container-layout u-container-layout-1">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                   Add category
-                  </button>
-                  
-                  <!-- Modal -->
-                  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="staticBackdropLabel">Add Category </h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form action='{{route('addcategory')}}'>
-                                <div class="mb-3">
-                                  <label for="exampleInputEmail1" class="form-label">Name</label>
-                                  <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                 
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                  </div>
-                              </form>
-                        </div>
-                       
-                      </div>
-                    </div>
-                  </div>
-
+        
+      </div>
+     </div>
+     <div class="col-8">
+      <section class="u-align-center u-clearfix u-section-1" id="sec-f181">
+        
+      
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-expanded-width u-tab-links-align-right u-tabs u-tabs-1">
+              <ul class="u-spacing-5 u-tab-list u-unstyled" role="tablist">
+                <li class="u-tab-item" role="presentation">
+                  <a class="active u-border-3 u-border-active-custom-color-2 u-border-grey-25 u-border-hover-custom-color-3 u-border-no-bottom u-border-no-left u-border-no-right u-button-style u-radius-9 u-tab-link u-tab-link-1" id="link-tab-0da5" href="#tab-0da5" role="tab" aria-controls="tab-0da5" aria-selected="true">Categories</a>
+                </li>
                 
-                <div class="u-table u-table-responsive u-table-1">
-                  <table class="u-table-entity">
-                    <colgroup>
-                      <col width="26.3%">
-                      <col width="34%">
-                      <col width="18.6%">
-                      <col width="21.1%">
-                    </colgroup>
-                    <thead class="u-align-center u-table-header u-table-header-1">
-                      <tr style="height: 35px;">
-                        <th class="u-border-2 u-border-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-table-cell">Category</th>
-                        <th class="u-border-2 u-border-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-table-cell">N° Media</th>
-                        <th class="u-border-2 u-border-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-table-cell u-text-white">Related Operation</th>
-                        <th class="u-border-2 u-border-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></th>
-                      </tr>
-                    </thead>
-                    <tbody class="u-align-center u-table-body">
-                      @foreach($categories as $categorie)
-                        <tr style="height: 45px;">
-                        <td class="u-border-2 u-border-grey-15 u-border-no-left u-border-no-right u-table-cell"> {{$categorie->name}}</td>
-                        <td class="u-border-2 u-border-grey-15 u-border-no-left u-border-no-right u-table-cell">{{$categorie->medias->count()}}</td>
-                        <td class="u-border-2 u-border-grey-15 u-border-no-left u-border-no-right u-table-cell u-table-cell-7">Edit&nbsp;</td>
-                        <td class="u-border-2 u-border-grey-15 u-border-no-left u-border-no-right u-table-cell u-table-cell-8">Delete</td>
-                      </tr>
-                      @endforeach
+              </ul>
+              
+              <div class="u-tab-content">
+                
+                <div class="u-container-style u-tab-active u-tab-pane u-white u-tab-pane-1" id="tab-0da5" role="tabpanel" aria-labelledby="link-tab-0da5">
+                  <div class="u-container-layout u-container-layout-1">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                       Add category
+                      </button>
                       
-                    </tbody>
-                  </table>
+                      
+                      <!-- Modal -->
+                      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="staticBackdropLabel">Add Category </h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action='{{route('addcategory')}}'>
+                                    <div class="mb-3">
+                                      <label for="exampleInputEmail1" class="form-label">Name</label>
+                                      <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                     
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                      </div>
+                                  </form>
+                            </div>
+                           
+                          </div>
+                        </div>
+                      </div>
+                      
+    
+                    
+                    <div class="u-table u-table-responsive u-table-1">
+                      
+                      <table class="u-table-entity">
+                        <colgroup>
+                          <col width="26.3%">
+                          <col width="34%">
+                          <col width="18.6%">
+                          <col width="21.1%">
+                        </colgroup>
+                        <thead class="u-align-center u-table-header u-table-header-1">
+                          <tr style="height: 35px;">
+                            <th class="u-border-2 u-border-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-table-cell">Category</th>
+                            <th class="u-border-2 u-border-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-table-cell">N° Media</th>
+                            <th class="u-border-2 u-border-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-table-cell u-text-white">Related Operation</th>
+                            <th class="u-border-2 u-border-custom-color-2 u-border-no-left u-border-no-right u-border-no-top u-table-cell"></th>
+                          </tr>
+                        </thead>
+                        <tbody class="u-align-center u-table-body">
+                          @foreach($categories as $categorie)
+                            <tr style="height: 45px;">
+                            <td class="u-border-2 u-border-grey-15 u-border-no-left u-border-no-right u-table-cell"> {{$categorie->name}}</td>
+                            <td class="u-border-2 u-border-grey-15 u-border-no-left u-border-no-right u-table-cell">{{$categorie->medias->count()}}</td>
+                            <td class="u-border-2 u-border-grey-15 u-border-no-left u-border-no-right u-table-cell u-table-cell-7">
+
+
+
+
+                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$categorie->id}}" data-bs-whatever="@getbootstrap">Edit</button>
+
+                              <div class="modal fade" id="exampleModal{{$categorie->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form action='{{route('editcat')}}'>
+                                        <div class="mb-3">
+                                          <label for="recipient-name" class="col-form-label">Edit Categorie:</label>
+                                          <input type="hidden" name="id" class="form-control" id="recipient-name" value="{{$categorie->id}}">
+                                          <input type="text" name="name" class="form-control" id="recipient-name" value="{{$categorie->name}}">
+                                        </div>
+                                        
+
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          <button type="submit" class="btn btn-primary">Update </button>
+                                        </div>
+                                      </form>
+                                    </div>
+                                   
+                                  </div>
+                                </div>
+                              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            </td>
+                          </tr>
+                          @endforeach
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                    <p class="u-align-left u-large-text u-text u-text-variant u-text-3"> Related Ope​ration</p>
+                  </div>
                 </div>
-                <p class="u-align-left u-large-text u-text u-text-variant u-text-3"> Related Ope​ration</p>
+                
               </div>
             </div>
-            
           </div>
-        </div>
+          
+        </section>
+        
+        
+        
+        
+        
+       
+      <section class="u-align-center u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-section-5" id="sec-1768">
+          
+        </section>
+     </div>
+     <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-image u-footer" id="sec-1422" data-image-width="1920" data-image-height="573"><div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-align-left u-social-icons u-spacing-20 u-social-icons-1">
+        <a class="u-social-url" title="Instgram" target="_blank" href="https://www.instagram.com/"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-custom-color-2 u-icon-1"><img src="images/5.png" alt=""></span>
+        </a>
+        <a class="u-social-url" title="twitter" target="_blank" href="https://twitter.com/"><span class="u-file-icon u-icon u-social-icon u-social-twitter u-text-custom-color-2 u-icon-2"><img src="images/6.png" alt=""></span>
+        </a>
+        <a class="u-social-url" title="Email" target="_blank" href="mailto:mahfoud.iau@gmail.com?subject=website"><span class="u-file-icon u-icon u-social-icon u-social-instagram u-text-custom-color-2 u-icon-3"><img src="images/7.png" alt=""></span>
+        </a>
+        <a class="u-social-url" title="phone" target="_blank" href="tel:0550000000"><span class="u-file-icon u-icon u-social-icon u-social-linkedin u-text-custom-color-2 u-icon-4"><img src="images/8.png" alt=""></span>
+        </a>
       </div>
-      
-    </section>
-    
-    
-    
-    
-    
-    <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-image u-footer" id="sec-1422" data-image-width="1920" data-image-height="573"><div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-align-left u-social-icons u-spacing-20 u-social-icons-1">
-          <a class="u-social-url" title="Instgram" target="_blank" href="https://www.instagram.com/"><span class="u-file-icon u-icon u-social-facebook u-social-icon u-text-custom-color-2 u-icon-1"><img src="images/5.png" alt=""></span>
-          </a>
-          <a class="u-social-url" title="twitter" target="_blank" href="https://twitter.com/"><span class="u-file-icon u-icon u-social-icon u-social-twitter u-text-custom-color-2 u-icon-2"><img src="images/6.png" alt=""></span>
-          </a>
-          <a class="u-social-url" title="Email" target="_blank" href="mailto:mahfoud.iau@gmail.com?subject=website"><span class="u-file-icon u-icon u-social-icon u-social-instagram u-text-custom-color-2 u-icon-3"><img src="images/7.png" alt=""></span>
-          </a>
-          <a class="u-social-url" title="phone" target="_blank" href="tel:0550000000"><span class="u-file-icon u-icon u-social-icon u-social-linkedin u-text-custom-color-2 u-icon-4"><img src="images/8.png" alt=""></span>
-          </a>
-        </div>
-        <p class="u-custom-font u-font-roboto-slab u-text u-text-palette-5-dark-2 u-text-1"> ©2022 Imam Abdulrahman Bin Faisal University. All rights <span style="font-size: 0.8125rem;"></span>reserved.
-        </p>
-        <a href="https://www.iau.edu.sa/en" class="u-active-none u-border-2 u-border-palette-5-dark-2 u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-text-hover-palette-5-dark-1 u-text-palette-5-dark-2 u-top-left-radius-0 u-top-right-radius-0 u-btn-1">IAU Website</a>
-        <p class="u-align-center u-custom-font u-font-roboto-slab u-text u-text-palette-5-dark-1 u-text-2">Contact us via</p>
-      </div></footer>
-  <section class="u-align-center u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-section-5" id="sec-1768">
-      
-    </section><style> .u-section-5 {
+      <p class="u-custom-font u-font-roboto-slab u-text u-text-palette-5-dark-2 u-text-1"> ©2022 Imam Abdulrahman Bin Faisal University. All rights <span style="font-size: 0.8125rem;"></span>reserved.
+      </p>
+      <a href="https://www.iau.edu.sa/en" class="u-active-none u-border-2 u-border-palette-5-dark-2 u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-text-hover-palette-5-dark-1 u-text-palette-5-dark-2 u-top-left-radius-0 u-top-right-radius-0 u-btn-1">IAU Website</a>
+      <p class="u-align-center u-custom-font u-font-roboto-slab u-text u-text-palette-5-dark-1 u-text-2">Contact us via</p>
+    </div></footer>
+
+   </div>
+   <style> .u-section-5 {
   min-height: 858px;
 }
 

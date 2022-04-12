@@ -144,7 +144,7 @@ class DashboardController extends Controller
     public function admin()
     {
         $categories=Categorie::all();
-        return view('admin',['categories'=>$categories]);
+        return view('admin',['categories'=>$categories,'user'=>Auth::user()]);
     }
 
     public function addcategory(Request $request)
@@ -161,6 +161,14 @@ class DashboardController extends Controller
         $user=Auth::user();
         $user->password= Hash::make($request->pass);
         $user->save();
+        return redirect()->back();
+    }
+
+    public function editcat(Request $request)
+    {
+        $cat=Categorie::find($request->id);
+        $cat->name=$request->name;
+        $cat->save();
         return redirect()->back();
     }
 }
