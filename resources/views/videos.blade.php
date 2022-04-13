@@ -92,10 +92,10 @@
           <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
         </div>
       </nav>
-      <a class="dropdown-item" href="{{ route('logout') }}"
+      <a class="" href="{{ route('logout') }}"
       onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-    <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"><img src="images/1.png" alt=""></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
+    <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
        
    </a>
   
@@ -156,5 +156,11 @@
         <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use></svg>
         <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg" id="svg-1d98"><path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg>
     </span>
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script>
+        Weglot.initialize({
+            api_key: 'wg_a23b6c1466a62b5447e32b2df0ef3c7b9'
+        });
+    </script>
   </body>
 </html>

@@ -96,7 +96,7 @@
   <a class="dropdown-item" href="{{ route('logout') }}"
     onclick="event.preventDefault();
                   document.getElementById('logout-form').submit();">
-  <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"><img src="images/1.png" alt=""></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
+  <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
      
  </a>
 

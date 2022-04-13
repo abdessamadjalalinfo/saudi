@@ -88,10 +88,10 @@
           </div>
           <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
         </div>
-      </nav> <a class="dropdown-item" href="{{ route('logout') }}"
+      </nav> <a class="" href="{{ route('logout') }}"
       onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-    <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"><img src="images/1.png" alt=""></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
+    <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
        
    </a>
   
@@ -144,10 +144,18 @@
         </p>
         <a href="https://www.iau.edu.sa/en" class="u-active-none u-border-2 u-border-palette-5-dark-2 u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-radius-0 u-text-hover-palette-5-dark-1 u-text-palette-5-dark-2 u-top-left-radius-0 u-top-right-radius-0 u-btn-1">IAU Website</a>
         <p class="u-align-center u-custom-font u-font-roboto-slab u-text u-text-palette-5-dark-1 u-text-2">Contact us via</p>
-      </div></footer>
+      </div>
+      ></footer>
     <span style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 20px" class="u-back-to-top u-icon u-icon-circle u-opacity u-opacity-85 u-palette-1-base u-spacing-13" data-href="#">
         <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use></svg>
         <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg" id="svg-1d98"><path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg>
     </span>
+   
   </body>
+  <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script>
+        Weglot.initialize({
+            api_key: 'wg_a23b6c1466a62b5447e32b2df0ef3c7b9'
+        });
+    </script>
 </html>

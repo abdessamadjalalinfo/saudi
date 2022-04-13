@@ -35,5 +35,11 @@
         </div>
       </div>
     </section>
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+<script>
+    Weglot.initialize({
+        api_key: 'wg_a23b6c1466a62b5447e32b2df0ef3c7b9'
+    });
+</script>
     
 @endsection

@@ -39,7 +39,7 @@
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
-  <body class="u-body u-xl-mode"><header class="u-clearfix u-header u-image u-valign-middle u-header" id="sec-b82e" data-image-width="750" data-image-height="375"><div class="u-custom-color-3 u-expanded-width u-opacity u-opacity-20 u-shape u-shape-rectangle u-shape-1"></div><nav class="u-dropdown-icon u-menu u-menu-dropdown u-offcanvas u-menu-1" data-position="NAV" data-responsive-from="MD">
+  <body class="u-body u-overlap u-overlap-contrast u-overlap-transparent u-xl-mode"><header class="u-clearfix u-header u-image u-valign-middle u-header" id="sec-b82e" data-image-width="750" data-image-height="375"><div class="u-custom-color-3 u-expanded-width u-opacity u-opacity-20 u-shape u-shape-rectangle u-shape-1"></div><nav class="u-dropdown-icon u-menu u-menu-dropdown u-offcanvas u-menu-1" data-position="NAV" data-responsive-from="MD">
         <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 500;">
           <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
             <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
@@ -89,10 +89,10 @@
           <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
         </div>
       </nav>
-      <a class="dropdown-item" href="{{ route('logout') }}"
+      <a class="" href="{{ route('logout') }}"
       onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-    <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"><img src="images/1.png" alt=""></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
+    <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
        
    </a>
   
@@ -149,5 +149,17 @@
         <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use></svg>
         <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg" id="svg-1d98"><path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg>
     </span>
+    <script>
+      Weglot.initialize({
+          api_key: 'wg_a23b6c1466a62b5447e32b2df0ef3c7b9'
+      });
+  </script>
+
+<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+<script>
+    Weglot.initialize({
+        api_key: 'wg_a23b6c1466a62b5447e32b2df0ef3c7b9'
+    });
+</script>
   </body>
 </html>

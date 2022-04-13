@@ -3,6 +3,11 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
+    <script>
+      Weglot.initialize({
+          api_key: 'wg_a23b6c1466a62b5447e32b2df0ef3c7b9'
+      });
+  </script>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -15,7 +20,12 @@
     <meta name="generator" content="Nicepage 4.5.4, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,400,500,600,700,800,900">
-    
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script>
+        Weglot.initialize({
+            api_key: 'wg_a23b6c1466a62b5447e32b2df0ef3c7b9'
+        });
+    </script>
     
     
     
@@ -92,10 +102,10 @@
           <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
         </div>
       </nav>
-      <a class="dropdown-item" href="{{ route('logout') }}"
+      <a class="" href="{{ route('logout') }}"
       onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-    <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"><img src="images/1.png" alt=""></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
+    <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
        
    </a>
   
@@ -105,6 +115,15 @@
     <section class="u-clearfix u-white u-section-1" id="sec-2654">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h2 class="u-custom-font u-font-georgia u-subtitle u-text u-text-default u-text-1">Upload Content</h2>
+        @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+      @endif
         <div class="row">
 <div class="col-4">
     
@@ -217,6 +236,7 @@
         
       </div>
     </section>
+
     
     
     

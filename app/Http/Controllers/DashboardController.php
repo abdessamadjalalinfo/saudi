@@ -67,6 +67,9 @@ class DashboardController extends Controller
     public function storevideo(Request $request)
     {
         
+        $request->validate([
+            'video' => 'required|mimes:mp4,wmv'
+            ]);
         $name = $request->file('video')->getClientOriginalName();
  
        
@@ -93,6 +96,9 @@ class DashboardController extends Controller
     public function storeimages(Request $request)
     {
         
+        $request->validate([
+            'image' => 'required|mimes:png,jpg,jpeg'
+            ]);
         $name = $request->file('image')->getClientOriginalName();
  
        
@@ -118,6 +124,9 @@ class DashboardController extends Controller
     public function storemedia(Request $request)
     {
         
+        $request->validate([
+            'media' => 'required|mimes:pdf,sv,txt,xlx,xls'
+            ]);
         $name = $request->file('media')->getClientOriginalName();
  
        

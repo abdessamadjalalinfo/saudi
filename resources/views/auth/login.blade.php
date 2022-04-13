@@ -49,7 +49,7 @@
 		<div class="overlay-panel overlay-right">
 			<h1>Hello!</h1>
 			<p>if you happened to forget your password </p>
-			<button class="ghost" id="reSet">click here</button>
+			<a href="/password/reset" class="ghost" id="reSet">click here</a>
 		</div>
 	</div>
 </div>

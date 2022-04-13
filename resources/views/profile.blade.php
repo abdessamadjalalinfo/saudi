@@ -86,16 +86,21 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="User-profile.html" style="padding: 10px 0px;">Profile</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{route('uploadcontent')}}" style="padding: 10px 0px;">Upload Contant</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{{route('admin')}}" style="padding: 10px 0px;">Admin Panel</a>
+  <script>
+    Weglot.initialize({
+        api_key: 'wg_a23b6c1466a62b5447e32b2df0ef3c7b9'
+    });
+</script>
 </li></ul>
             </div>
           </div>
           <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
         </div>
       </nav>
-      <a class="dropdown-item" href="{{ route('logout') }}"
+      <a href="{{ route('logout') }}"
       onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
-    <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"><img src="images/1.png" alt=""></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
+    <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
        
    </a>
   
@@ -197,7 +202,7 @@
     </div>
     
     
-    
+   
     
     <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-clearfix u-footer u-image u-footer" id="sec-1422" data-image-width="1920" data-image-height="573"><div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-left u-social-icons u-spacing-20 u-social-icons-1">
@@ -306,5 +311,11 @@
   .u-section-4 .u-form-1 {
     width: 320px;
   }
-}</style></body>
+}</style>
+<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+<script>
+    Weglot.initialize({
+        api_key: 'wg_a23b6c1466a62b5447e32b2df0ef3c7b9'
+    });
+</script></body>
 </html>

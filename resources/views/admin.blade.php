@@ -58,14 +58,13 @@
         </div>
         <div class="u-custom-menu u-nav-container">
           <ul class="u-nav u-spacing-23 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="{{route('dashboard')}}" style="padding: 10px 0px;">Home</a>
-</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" style="padding: 10px 0px;">Categories</a><div class="u-nav-popup"><ul class="u-h-spacing-31 u-nav u-unstyled u-v-spacing-6 u-nav-2"><li class="u-nav-item"><a class="u-button-style u-custom-color-8 u-hover-custom-color-3 u-nav-link u-text-hover-custom-color-2">Articles</a>
-</li><li class="u-nav-item"><a class="u-button-style u-custom-color-8 u-hover-custom-color-3 u-nav-link u-text-hover-custom-color-2" href="View-Category.html">Books</a>
-</li><li class="u-nav-item"><a class="u-button-style u-custom-color-8 u-hover-custom-color-3 u-nav-link u-text-hover-custom-color-2">Certificates</a>
-</li><li class="u-nav-item"><a class="u-button-style u-custom-color-8 u-hover-custom-color-3 u-nav-link u-text-hover-custom-color-2">Letters</a><div class="u-nav-popup"><ul class="u-h-spacing-31 u-nav u-unstyled u-v-spacing-6 u-nav-3"><li class="u-nav-item"><a class="u-button-style u-custom-color-8 u-hover-custom-color-3 u-nav-link u-text-hover-custom-color-2">Cover letters</a>
-</li></ul>
-</div>
-</li><li class="u-nav-item"><a class="u-button-style u-custom-color-8 u-hover-custom-color-3 u-nav-link u-text-hover-custom-color-2">Presentation</a>
-</li></ul>
+</li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" style="padding: 10px 0px;">Categories</a><div class="u-nav-popup">
+  <ul class="u-h-spacing-31 u-nav u-unstyled u-v-spacing-6 u-nav-2">
+    @foreach($categories as $categorie)
+<li class="u-nav-item"><a href="{{route('categorie',$categorie->id)}}" class="u-button-style u-custom-color-8 u-hover-custom-color-3 u-nav-link u-text-hover-custom-color-2">{{$categorie->name}}</a>
+</li>
+@endforeach
+</ul>
 </div>
 </li><li class="u-nav-item"><a class="u-border-2 u-border-active-custom-color-2 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-black u-text-hover-custom-color-2" href="{{route('profile')}}" style="padding: 10px 0px;">Profile</a>
 </li>@if(Auth::user()->role_id==1)
@@ -96,18 +95,21 @@
           </div>
           <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
         </div>
+        <a class="" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+      <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+          @csrf
+      </form>  
+     </a>
+    
       </nav>
-      <a class="dropdown-item" href="{{ route('logout') }}"
-      onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-    <span class="u-file-icon u-hover-feature u-icon u-text-black u-icon-1" data-href="https://google.com"><img src="images/1.png" alt=""></span><span class="u-file-icon u-hover-feature u-icon u-icon-rectangle u-text-black u-icon-2" data-href="614619716"><img src="images/2.png" alt=""> 
-       
-   </a>
+     
   
-   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-       @csrf
-   </form> </span> 
-   <div class="row">
+   </span> 
+
+   <div class="row container">
      <div style="background-color: rgb(255, 255, 255);" class="col-3">
       <div class="">
         <h2 class="u-align-center u-subtitle u-text u-text-4">Information</h2>
@@ -122,7 +124,7 @@
         
       </div>
      </div>
-     <div class="col-8">
+     <div class="col-7">
       <section class="u-align-center u-clearfix u-section-1" id="sec-f181">
         
       
@@ -256,6 +258,7 @@
           </div>
           
         </section>
+      </div>
         
         
         
@@ -283,7 +286,7 @@
       <p class="u-align-center u-custom-font u-font-roboto-slab u-text u-text-palette-5-dark-1 u-text-2">Contact us via</p>
     </div></footer>
 
-   </div>
+   
    <style> .u-section-5 {
   min-height: 858px;
 }
@@ -455,5 +458,13 @@
   .u-section-6 .u-form-1 {
     margin-left: 0;
   }
-}</style></body>
+}
+</style>
+<script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script>
+        Weglot.initialize({
+            api_key: 'wg_a23b6c1466a62b5447e32b2df0ef3c7b9'
+        });
+    </script>
+</body>
 </html>
